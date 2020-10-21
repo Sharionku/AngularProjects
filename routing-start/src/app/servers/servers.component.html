@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a
+        href="#"
+        class="list-group-item"
+        *ngFor="let server of servers">
+        {{ server.name }}
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <button class="btn btn-primary" (click)="onReload()">Reload Page</button>
+    <!-- relative path, servers will get appended to this route we are on
+    so it will load servers/servers, which givs us an error -->
+    <!-- <a routerLink="../servers">Reload Page</a> -->
+    <app-edit-server></app-edit-server>
+    <hr>
+    <app-server></app-server>
+  </div>
+</div>
+
